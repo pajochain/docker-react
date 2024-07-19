@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t pajochain/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true pajochain/docker-react npm run test
