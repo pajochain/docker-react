@@ -15,7 +15,7 @@ deploy:
   env: "e-bppddwra2n"
   bucket_name: "elasticbeanstalk-us-west-1-471112686389"
   bucket_path: "docker"
-on:
-  all_branches: true
-access_key_id: $AWS_ACCESS_KEY
-secret_access_key: "$AWS_SECRET_KEY"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
