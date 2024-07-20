@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true pajochain/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "docker"
+  env: "e-bppddwra2n"
+  bucket_name: "elasticbeanstalk-us-west-1-471112686389"
+  bucket_path: "docker"
+on:
+  branch: main
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: "$AWS_SECRET_KEY"
